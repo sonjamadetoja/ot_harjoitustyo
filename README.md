@@ -9,6 +9,10 @@ Tässä harjoitellaan markdown-notaation käyttöä.
 [komentorivi.txt](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)  
 [gitlog.txt](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/laskarit/viikko1/git_log.txt)
 
+####
+
+Tehdään vielä yksi lisäys tähän, jotta voidaan tarkistaa sen päivittyminen verkkosivulle push-käskyllä.
+
 ## Kursivoitu teksti
 
 *Kursivoitu teksti näyttää tältä*  
