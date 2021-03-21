@@ -13,6 +13,10 @@ Tässä harjoitellaan markdown-notaation käyttöä.
 
 Tehdään vielä yksi lisäys tähän, jotta voidaan tarkistaa sen päivittyminen verkkosivulle push-käskyllä.
 
+#### Epäsynkrooni
+
+Tämä teksti on epäsynkronin testausta varten.
+
 ## Kursivoitu teksti
 
 *Kursivoitu teksti näyttää tältä*  
