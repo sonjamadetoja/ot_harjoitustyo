@@ -1,6 +1,13 @@
-# TESTI
+# Ohjelmointitekniikka, harjoitustyö
+
+## Tehtävät
+
+### Viikko 1
 
 Tässä harjoitellaan markdown-notaation käyttöä.
+
+[komentorivi.txt](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)  
+[gitlog.txt](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/laskarit/viikko1/git_log.txt)
 
 ## Kursivoitu teksti
 
@@ -30,7 +37,3 @@ Eka otsikko | Toka otsikko
 ------------|-------------
 Sisältö 1A | Sisältö 2A
 Sisältö 1B | Sisältö 2B
-
-## Lisää linkkejä tiedostoihin 
-[komentorivi.txt](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)  
-[gitlog.txt](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/laskarit/viikko1/git_log.txt)
