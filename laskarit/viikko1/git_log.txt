@@ -1,3 +1,5 @@
+Alkuun teksti epäsynkronitilan testausta varten.
+----
 commit fee6cf30a3135b9d93c1a0d37337ca0b9d87f8a7
 Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
 Date:   Sat Mar 20 16:41:28 2021 +0200
