@@ -1,0 +1,123 @@
+commit fee6cf30a3135b9d93c1a0d37337ca0b9d87f8a7
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 16:41:28 2021 +0200
+
+    poistetaan file1 ja nimetään uudelleen file2
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d53ae9a89665438207489deecb73ad1717603106
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 16:34:20 2021 +0200
+
+    tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 5bd07fee8343add58602e6bc9597aaa7d0ccaf16
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 16:09:01 2021 +0200
+
+    muutoksia
+
+ eka.txt    | 11 ++---------
+ kolmas.txt |  2 +-
+ 2 files changed, 3 insertions(+), 10 deletions(-)
+
+commit 3642877ebce82afc0fc6ebaf6ddb0106e262f2f9
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 16:06:22 2021 +0200
+
+    nimenmuutokseen liittyvä vanhan poisto
+
+ tiedosto.txt | 352 -----------------------------------------------------------
+ 1 file changed, 352 deletions(-)
+
+commit 94994dabc6065ca940b6fd0c62743291accd90ac
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 16:05:23 2021 +0200
+
+    nimenmuutos eka
+
+ eka.txt | 352 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 352 insertions(+)
+
+commit 26dca776da28e7c746221d3245b4cee195249981
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 16:04:15 2021 +0200
+
+    Poistetaan toinen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 9fb3798d95496ce6cd36c04876cd41ee9f43a4bf
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 13:18:28 2021 +0200
+
+    muutoksia tiedostoon
+
+ tiedosto.txt | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+commit 4a2f388705c0f91c8397ae88569c230d600eccbe
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 13:14:43 2021 +0200
+
+    lisätään tieto Mariah Careystä
+
+ tiedosto.txt | 355 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 354 insertions(+), 1 deletion(-)
+
+commit 15a4a1608a905d53f361fad14bfcc3c54df99e06
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 13:01:55 2021 +0200
+
+    lisätään hakemisto stuff
+
+ stuff/uusitiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8f9f6c135f0a670a14c4b6aa0edbf86c9c3e35bd
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 13:00:42 2021 +0200
+
+    muutos toiseen ja kolmanteen
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 4d8130def37ade8746a7867bfec8558cfefe2b9d
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 12:59:18 2021 +0200
+
+    kolmas tiedosto
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 61442f05305693d2fbbc227a97b9af76144fe31e
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 12:38:12 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit c81a6f119079c6e392ac5b22ae26fdd89f831ba4
+Author: Sonja Madetoja <sonja.madetoja@helsinki.fi>
+Date:   Sat Mar 20 12:34:21 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
