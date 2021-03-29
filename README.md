@@ -1,47 +1,37 @@
-# Ohjelmointitekniikka, harjoitustyö
+# Vaatimusmäärittely
 
-## Tehtävät
+## Sovelluksen tarkoitus
 
-### Viikko 1
+Sovelluksella voi pelata tetris-peliä. Pelissä on alue, jolla liikku palikoita alaspäin. Pelaaja voi kääntää palikoita tai siirtää niitä alaspäin. Tarkoitus on saada alue täytettyä jokaisella rivillä laidalta toiselle. Täytetyt rivit häviävät, ja niistä saa pisteitä. Peli päättyy, kun alue täyttyy pystysuunnassa. Sovelluksessa on vain yksikäyttäjärooli.
 
-Tässä harjoitellaan markdown-notaation käyttöä.
+## Käyttöliittymäluonnos
 
-[komentorivi.txt](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)  
-[gitlog.txt](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/laskarit/viikko1/git_log.txt)
+![Kuva](/home/smadetoj/Kurssit/OHTE/ot_harjoitustyo/OHTE_kayttoliittymaluonnos1.jpg)
 
-#### Otsikko
+## Perusversion tarjoama toiminnallisuus
 
-Tehdään vielä yksi lisäys tähän, jotta voidaan tarkistaa sen päivittyminen verkkosivulle push-käskyllä.
+### Ennen kirjautumista
+- Tunnuksen luominen
+- Sisäänkirjautuminen
 
-#### Epäsynkrooni
+### Kirjautuneena
+- pelin aloittaminen
+- pelaaminen:
+  - palikoiden kääntäminen näppäimistöllä
+  - palikoiden siirtäminen sivusuunnassa näppäimistöllä
+  - 7 erilaista palikkaa
+  - värimaailma soveltuu värisokeille
+- pistemäärän tallentuminen
+- omien pistetulosten katselu
+- tunnuksen poistaminen
+- uloskirjautuminen
 
-Tämä teksti on epäsynkronin testausta varten.
+## Jatkokehitysideoita
 
-## Kursivoitu teksti
-
-*Kursivoitu teksti näyttää tältä*  
-_Uudelleen vielä_
-
-## Lihavoitu teksti
-
-**Lihavoitu teksti näyttää tältä**  
-__Toisen kerran sama__
-
-### Yhdistely
-
-Tässä ne ovat *samassa* **lauseessa**. Entäs ***samassa sanassa***?
-
-## Entäs asteriski?
-
-\*Sekin onnistuu\*
-
-## Lisätään vielä linkki
-
-Kurssisivu löytyy [täältä](https://ohjelmistotekniikka-hy.github.io/) 
-
-## Taulukko
-
-Eka otsikko | Toka otsikko
-------------|-------------
-Sisältö 1A | Sisältö 2A
-Sisältö 1B | Sisältö 2B
+- parhaiden tulosten lista
+- salasana
+- pelinopeuden valinta
+- keskeytä peli
+- valitse värimaailma
+- omien tulosten järjestäminen ajan tai pistemäärän mukaan
+- äänitehosteet
