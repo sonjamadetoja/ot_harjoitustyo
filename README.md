@@ -6,7 +6,8 @@ Sovelluksella voi pelata tetris-peliä. Pelissä on alue, jolla liikku palikoita
 
 ## Käyttöliittymäluonnos
 
-![Kuva](/home/smadetoj/Kurssit/OHTE/ot_harjoitustyo/OHTE_kayttoliittymaluonnos1.jpg)
+Sovellus koostuu neljästä näkymästä. Ensimmäinen on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäkymään tai kirjautuneen käyttäjän näkymään. Kirjautuneen käyttäjän näkymästä pääsee pelinäkymään. Kun peli päättyy, ohjelma palaa automaattisesti kirjautuneen käyttäjän näkymään.
+<img src="https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/OHTE_kayttoliittymaluonnos1.jpg" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
 
