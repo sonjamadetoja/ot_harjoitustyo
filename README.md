@@ -7,6 +7,7 @@ Sovelluksen tarkoitus on tulojen ja menojen seuraaminen ja se on tarkoitettu yks
 ## Käyttöliittymäluonnos
 
 Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäkymään tai kirjautuneen käyttäjän näkymään. Kirjautuneen käyttäjän näkymästä pääsee lisäämään tapahtumia, katsomaan tapahtumia tai poistamaan tunnuksen. Tapahtumien lisäämisnäkymässä joko lisätään yhden tapahtuman tiedot tai haetaan tiedot tiedostosta. Tapahtumien katsomisnäkymässä valitaan kuukausi tai vuosi, jolloin sovellus hakee tapahtumatiedot ja näyttää niistä graafin.
+
 <img src="https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/kayttoliittymaluonnos_budjettisovellus.jpeg" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
