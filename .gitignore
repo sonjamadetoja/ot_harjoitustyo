@@ -8,3 +8,4 @@ data/notes.txt
 src/entities/notes.txt
 src/repositories/notes.txt
 src/services/notes.txt
+src/ui/__pycache__/
