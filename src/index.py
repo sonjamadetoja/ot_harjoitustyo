@@ -1,12 +1,15 @@
 
 from ui.ui import UI
+from initialize_database import DataBase
+from database_connection import get_database_connection
 
 def main():
 
-    ui = UI()
-    ui.start() 
+    database = DataBase(get_database_connection())
+    database.initialize_database()
 
-
+    user_interface = UI()
+    user_interface.start()
 
 if __name__ == '__main__':
     main()

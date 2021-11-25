@@ -11,16 +11,22 @@ class LoginView:
         choice = int(input("Valintani: "))
         # Note to self: Tähän lisättävä joku ratkaisu siihen jos input ei ole numero
         if choice == 1:
-            userName = input("Anna käyttäjätunnus:")
-            bool = user_repository.find_user(userName)
-            if bool == True:
+            user_name = input("Anna käyttäjätunnus: ")
+            find_user = user_repository.find_user(user_name)
+            if find_user is True:
                 return "login"
             else:
                 print("Tällaista käyttäjää ei ole. Ohjelma päättyy.")
+                # Note to self: Lisää tähän return niin että se palaa alkuun tms
         elif choice == 2:
-            addUserName = input("Keksi käyttäjätunnus:")
+            add_user_name = input("Keksi käyttäjätunnus: ")
             # Note to self: Lisää tähän joku vaatimus pituudesta ja tarkistus sille
-            print("Tähän tulee kutsu tietokantatoimintoon, ei vielä valmis")
-            return "register"
+            find_user = user_repository.find_user(add_user_name)
+            if find_user is True:
+                print("Tämä käyttäjänimi on jo olemassa. Ohjelma päättyy.")
+                # Note to self: Lisää tähän return niin että se palaa alkuun tms
+            else:
+                user_repository.add_user(add_user_name)
+                return "register"
         else:
             print("Virheellinen valinta. Ohjelma päättyy.")

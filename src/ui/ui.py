@@ -14,8 +14,8 @@ class UI:
         if action == "login":
             self._show_menu_view()
         if action == "register":
-            print("Rekisteröiminen ei vielä valmis")
-            
+            self._show_menu_view()
+
     def _show_menu_view(self):
         self._current_view = MenuView()
         self._current_view.show_menu()
