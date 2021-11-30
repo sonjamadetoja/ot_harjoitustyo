@@ -12,6 +12,8 @@ Sovelluksen toiminta on testattu Python-versiolla ```3.8.```
 
 [Työaikakirjanpito](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
+[Arkkitehtuuri](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
