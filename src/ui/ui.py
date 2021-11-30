@@ -13,8 +13,15 @@ class UI:
         action = self._current_view.show()
         if action == "login":
             self._show_menu_view()
+        if action == None:
+            print("Tämännimistä käyttäjää ei ole.")
+            self._show_login_view()
         if action == "register":
-            self._show_menu_view()
+            print("Käyttäjänimi on rekisteröity. Voit kirjautua. ")
+            self._show_login_view()
+        if action == False:
+            print("Tämä käyttäjänimi on jo olemassa. Kokeile uudestaan. ")
+            self._show_login_view()
 
     def _show_menu_view(self):
         self._current_view = MenuView()
