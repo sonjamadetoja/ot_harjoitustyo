@@ -13,12 +13,12 @@ Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäk
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
-- Tunnuksen luominen
-- Sisäänkirjautuminen
+- Tunnuksen luominen -tehty
+- Sisäänkirjautuminen -tehty osittain
 
 ### Kirjautuneena
-- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu)
-- saldon näkeminen (omistuksessa olevan rahan määrä tällä hetkellä)
+- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu) -tehty osittain
+- saldon näkeminen (omistuksessa olevan rahan määrä tällä hetkellä) -tehty
 - kuukausittaisten tai vuosittaisten yhteenvetojen katseleminen tuloista ja menoista luokittain
 - graafien katseleminen
 - tunnuksen poistaminen
