@@ -6,19 +6,19 @@ class Service:
         pass
 
     def login(self, user_name):
-            find_user = user_repository.find_user(user_name)
-            if find_user is True:
-                return "login"
-            else:
-                return None
+        find_user = user_repository.find_user(user_name)
+        if find_user is True:
+            return "login"
+        else:
+            return None
 
     def register(self, add_user_name):
-            find_user = user_repository.find_user(add_user_name)
-            if find_user is True:
-                return False
-            else:
-                user_repository.add_user(add_user_name)
-                return "register"
+        find_user = user_repository.find_user(add_user_name)
+        if find_user is True:
+            return False
+        else:
+            user_repository.add_user(add_user_name)
+            return "register"
 
     def transaction(self):
         print("Valitse toiminto numerolla:")
