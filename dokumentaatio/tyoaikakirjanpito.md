@@ -19,3 +19,4 @@
 | 30.11.| 0,5  | luokkakaavio |
 | 30.11.| 0,5  | suunnittelu ja koodin parantaminen |
 | 30.11.| 0,5  | testaaminen ja dokumentaation päivittämine |
+Yhteensä 18 h
