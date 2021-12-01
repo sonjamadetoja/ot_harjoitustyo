@@ -10,9 +10,9 @@ class TransactionRepository:
         cursor.execute('INSERT INTO transactions (deposits, user_id) VALUES (?,?)', (amount,user_id))
         self._connection.commit()
 
-    def find_all_deposits(self):
+    def find_all_deposits(self ,user_id):
         cursor = self._connection.cursor()
-        cursor.execute('SELECT * FROM transactions')
+        cursor.execute('SELECT * FROM transactions WHERE user_id=?', (user_id,))
         all_transactions = cursor.fetchall()
         deposits = []
         for row in all_transactions:

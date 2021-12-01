@@ -31,7 +31,8 @@ class Service:
         user_id = user.get_user_id()
         transaction_repository.add_deposit(amount, user_id)
 
-    def find_transactions(self):
-        transaction_repository.find_all_deposits()
+    def find_transactions(self, user):
+        user_id = user.get_user_id()
+        transaction_repository.find_all_deposits(user_id)
 
 service = Service()

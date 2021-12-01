@@ -19,7 +19,7 @@ class MenuView:
             # Note to self: lisää tähän jokin varmistus, että syöte on sopiva
             service.add_transaction(amount, user)
         elif choice == 2:
-            service.find_transactions()
+            service.find_transactions(user)
         elif choice == 3:
             print("Tapahtumien poistamista ei ole vielä toteutettu.")
         elif choice == 4:
