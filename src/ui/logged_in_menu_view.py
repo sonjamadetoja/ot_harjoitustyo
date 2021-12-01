@@ -1,11 +1,12 @@
 
 from services.service import service
+from entities.user import User
 
 class MenuView:
     def __init__(self):
         pass
 
-    def show_menu(self):
+    def show_menu(self, user):
         print("Valitse toiminto numerolla:")
         print("1 Lisää tapahtuma")
         print("2 Katso tapahtumia") 
@@ -16,7 +17,7 @@ class MenuView:
         if choice == 1:
             amount = int(input("Anna summa: "))
             # Note to self: lisää tähän jokin varmistus, että syöte on sopiva
-            service.add_transaction(amount)
+            service.add_transaction(amount, user)
         elif choice == 2:
             service.find_transactions()
         elif choice == 3:

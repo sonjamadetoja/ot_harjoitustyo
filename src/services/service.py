@@ -9,8 +9,9 @@ class Service:
     def login(self, user_name):
         find_user = user_repository.find_user(user_name)
         if find_user is True:
-            user = User(user_name)
-            return "login"
+            user_id = user_repository.find_user_id(user_name)
+            user = User(user_name, user_id)
+            return user
         else:
             return "no_username"
 
@@ -25,8 +26,9 @@ class Service:
             user_repository.add_user(add_user_name)
             return "register"
 
-    def add_transaction(self, amount):
-        transaction_repository.add_deposit(amount)
+    def add_transaction(self, amount, user):
+        user_id = user.get_user_id()
+        transaction_repository.add_deposit(amount, user_id)
 
     def find_transactions(self):
         transaction_repository.find_all_deposits()
