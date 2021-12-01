@@ -1,5 +1,6 @@
 from repositories.user_repository import user_repository
 from repositories.transaction_repository import transaction_repository
+from entities.user import User
 
 class Service:
     def __init__(self):
@@ -8,6 +9,7 @@ class Service:
     def login(self, user_name):
         find_user = user_repository.find_user(user_name)
         if find_user is True:
+            user = User(user_name)
             return "login"
         else:
             return "no_username"
