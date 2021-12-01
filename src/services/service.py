@@ -15,7 +15,8 @@ class Service:
         else:
             return "no_username"
 
-    def logout():
+    def logout(self, user):
+        user = None
         return "logout"
 
     def register(self, add_user_name):

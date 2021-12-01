@@ -23,6 +23,6 @@ class MenuView:
         elif choice == 3:
             print("Tapahtumien poistamista ei ole vielä toteutettu.")
         elif choice == 4:
-            service.logout()
+            service.logout(user)
         else:
             print("Virheellinen valinta. Ohjelma päättyy.")
