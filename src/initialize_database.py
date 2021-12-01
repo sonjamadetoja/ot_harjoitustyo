@@ -9,10 +9,10 @@ class DataBase:
         cursor = self._connection.cursor()
 
         cursor.execute('''
-            CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT);
+            CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT UNIQUE);
             ''')
         cursor.execute('''
-            CREATE TABLE IF NOT EXISTS transactions (id INTEGER PRIMARY KEY, deposits INTEGER);
+            CREATE TABLE IF NOT EXISTS transactions (id INTEGER PRIMARY KEY, deposits INTEGER, user_id INTEGER REFERENCES users);
             ''')
         return True
 
