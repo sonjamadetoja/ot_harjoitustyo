@@ -11,7 +11,8 @@ class MenuView:
         print("1 Lisää tapahtuma")
         print("2 Katso tapahtumia") 
         print("3 Poista tapahtumia")
-        print("4 Kirjaudu ulos") # Ei toteutettu
+        print("4 Kirjaudu ulos")
+        print("5 Poista käyttäjätunnus")
         choice = int(input("Valintani: "))
         # Note to self: Tähän lisättävä joku ratkaisu siihen jos input ei ole numero
         if choice == 1:
@@ -23,6 +24,11 @@ class MenuView:
         elif choice == 3:
             print("Tapahtumien poistamista ei ole vielä toteutettu.")
         elif choice == 4:
+            service.logout(user)
+        elif choice == 5:
+            print("HUOM: Kaikki tietosi poistuvat.")
+            # Lisää tähän vielä varmistus siitä, haluaako käyttäjä jatkaa.
+            service.delete_user(user)
             service.logout(user)
         else:
             print("Virheellinen valinta. Ohjelma päättyy.")

@@ -10,7 +10,7 @@ class TransactionRepository:
         cursor.execute('INSERT INTO transactions (deposits, user_id) VALUES (?,?)', (amount,user_id))
         self._connection.commit()
 
-    def find_all_deposits(self ,user_id):
+    def find_all_deposits(self, user_id):
         cursor = self._connection.cursor()
         cursor.execute('SELECT * FROM transactions WHERE user_id=?', (user_id,))
         all_transactions = cursor.fetchall()
@@ -23,5 +23,11 @@ class TransactionRepository:
             print(item)
             sum_transactions = sum_transactions+item
         print("Yhteensä: ", sum_transactions)
+
+    def remove_all_deposits(self, user_id):
+        cursor = self._connection.cursor('DELETE FROM transactions WHERE user_id=?', (user_id,))
+        cursor.execute()
+        self._connection.commit()
+
 
 transaction_repository = TransactionRepository(get_database_connection())

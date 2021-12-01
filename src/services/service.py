@@ -27,6 +27,11 @@ class Service:
             user_repository.add_user(add_user_name)
             return "register"
 
+    def delete_user(self, user):
+        user_id = user.get_user_id()
+        transaction_repository.remove_all_deposits(user_id)
+        user_repository.remove_user(user_id)
+
     def add_transaction(self, amount, user):
         user_id = user.get_user_id()
         transaction_repository.add_deposit(amount, user_id)

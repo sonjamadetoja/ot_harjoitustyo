@@ -25,4 +25,9 @@ class UserRepository:
         cursor.execute('INSERT INTO users (username) VALUES (?)', (username,))
         self._connection.commit()
 
+    def remove_user(self, user_id):
+        cursor = self._connection.cursor('DELETE FROM users WHERE username=?', (user_id))
+        cursor.execute()
+        self._connection.commit()
+
 user_repository = UserRepository(get_database_connection())
