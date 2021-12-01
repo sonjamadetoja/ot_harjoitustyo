@@ -1,5 +1,6 @@
 import unittest
 from services.service import service
+from entities.user import User
 
 class TestService(unittest.TestCase):
     def setUp(self):
@@ -7,13 +8,14 @@ class TestService(unittest.TestCase):
 
     def test_login_with_valid_username(self):
         response = service.login("Testaaja")
+        validity = isinstance(response, User)
 
-        self.assertEqual(response, "login")
+        self.assertEqual(validity, True)
 
     def test_login_with_invalid_username(self):
         response = service.login("Testaja")
 
-        self.assertEqual(response, None)
+        self.assertEqual(response, "no_username")
 
     # def test_register_creates_a_new_username(self):
     #     pass
