@@ -8,6 +8,7 @@ class LoginView:
         print("Valitse toiminto numerolla:")
         print("1 Kirjaudu")
         print("2 Luo käyttäjätunnus")
+        print("3 Lopeta ohjelma")
         choice = int(input("Valintani: "))
         # Note to self: Tähän lisättävä joku ratkaisu siihen jos input ei ole numero
         if choice == 1:
@@ -18,5 +19,7 @@ class LoginView:
             add_user_name = input("Keksi käyttäjätunnus: ")
             # Note to self: Lisää tähän joku vaatimus pituudesta ja tarkistus sille
             return service.register(add_user_name)
+        elif choice == 3:
+            print("Ohjelma päättyy.")
         else:
             print("Virheellinen valinta. Ohjelma päättyy.")

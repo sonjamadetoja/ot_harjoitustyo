@@ -10,7 +10,10 @@ class Service:
         if find_user is True:
             return "login"
         else:
-            return None
+            return "no_username"
+
+    def logout():
+        return "logout"
 
     def register(self, add_user_name):
         find_user = user_repository.find_user(add_user_name)
@@ -20,18 +23,10 @@ class Service:
             user_repository.add_user(add_user_name)
             return "register"
 
-    def transaction(self):
-        print("Valitse toiminto numerolla:")
-        print("1 Lisää tapahtuma") # Kesken
-        print("2 Katso tapahtumia") # Ei toteutettu
-        print("3 Kirjaudu ulos") # Ei toteutettu
-        choice = int(input("Valintani: "))
-        # Note to self: Tähän lisättävä joku ratkaisu siihen jos input ei ole numero
-        if choice == 1:
-            amount = int(input("Anna summa: "))
-            # Note to self: lisää tähän jokin varmistus, että syöte on sopiva
-            transaction_repository.add_deposit(amount)
-        elif choice == 2:
-            transaction_repository.find_all_deposits()
+    def add_transaction(self, amount):
+        transaction_repository.add_deposit(amount)
+
+    def find_transactions(self):
+        transaction_repository.find_all_deposits()
 
 service = Service()

@@ -13,7 +13,7 @@ class UI:
         action = self._current_view.show()
         if action == "login":
             self._show_menu_view()
-        if action == None:
+        if action == "no_username":
             print("Tämännimistä käyttäjää ei ole.")
             self._show_login_view()
         if action == "register":
@@ -25,4 +25,6 @@ class UI:
 
     def _show_menu_view(self):
         self._current_view = MenuView()
-        self._current_view.show_menu()
+        action = self._current_view.show_menu()
+        if action == "logout":
+            self._show_login_view()
