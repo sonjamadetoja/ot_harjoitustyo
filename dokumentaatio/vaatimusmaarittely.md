@@ -14,15 +14,15 @@ Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäk
 
 ### Ennen kirjautumista
 - Tunnuksen luominen -tehty
-- Sisäänkirjautuminen -tehty osittain
+- Sisäänkirjautuminen -tehty
 
 ### Kirjautuneena
-- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu) -tehty osittain
+- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu) -tehty, paitsi luokittelu
 - saldon näkeminen (omistuksessa olevan rahan määrä tällä hetkellä) -tehty
 - kuukausittaisten tai vuosittaisten yhteenvetojen katseleminen tuloista ja menoista luokittain
 - graafien katseleminen
-- tunnuksen poistaminen
-- uloskirjautuminen
+- tunnuksen poistaminen -tehty
+- uloskirjautuminen -tehty
 
 ## Jatkokehitysideoita
 - salasana
