@@ -1,8 +1,8 @@
+import os
+import datetime
 from repositories.user_repository import user_repository
 from repositories.transaction_repository import transaction_repository
 from entities.user import User
-import os
-import datetime
 
 class Service:
     def __init__(self):
@@ -14,8 +14,7 @@ class Service:
             user_id = user_repository.find_user_id(user_name)
             user = User(user_name, user_id)
             return user
-        else:
-            return "no_username"
+        return "no_username"
 
     def logout(self, user):
         user = None
@@ -25,9 +24,8 @@ class Service:
         find_user = user_repository.find_user(add_user_name)
         if find_user is True:
             return False
-        else:
-            user_repository.add_user(add_user_name)
-            return "register"
+        user_repository.add_user(add_user_name)
+        return "register"
 
     def delete_user(self, user):
         user_id = user.get_user_id()
@@ -42,7 +40,7 @@ class Service:
         user_id = user.get_user_id()
         transaction_repository.find_all_deposits(user_id)
 
-    def add_file(self, user, filename): 
+    def add_file(self, user, filename):
         user_id = user.get_user_id()
         dirname = os.path.dirname(__file__)
         new_path = os.path.join(dirname, "..", "..", "data", filename)
@@ -58,7 +56,8 @@ class Service:
                 for item in edit:
                     item.strip()
                 edit[0] = edit[0].strip()
-                # Tää alla oleva ei toimi jostain syystä -> siksi ekan rivin skippaus ennen loopin alkua
+                # Tää alla oleva ei toimi jostain syystä
+                # -> siksi ekan rivin skippaus ennen loopin alkua
                 # if edit[0] == "Kirjauspäivä":
                 #     continue
                 date = edit[0]

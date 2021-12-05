@@ -26,6 +26,5 @@ class DataBase:
             self._connection.commit()
 
     def initialize_database(self):
-        connection = self._connection
         self.create_tables()
         self.insert_test_user()

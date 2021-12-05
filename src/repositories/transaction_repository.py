@@ -7,7 +7,9 @@ class TransactionRepository:
 
     def add_deposit(self, date, amount, user_id, title):
         cursor = self._connection.cursor()
-        cursor.execute('INSERT INTO transactions (date, deposits, user_id, title) VALUES (?,?,?,?)', (date,amount,user_id,title))
+        cursor.execute('''
+        INSERT INTO transactions (date, deposits, user_id, title) VALUES (?,?,?,?)
+        ''', (date,amount,user_id,title))
         self._connection.commit()
 
     def find_all_deposits(self, user_id):
