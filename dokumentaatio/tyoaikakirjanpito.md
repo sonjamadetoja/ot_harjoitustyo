@@ -13,10 +13,14 @@
 | 25.11.| 1,5  | tapahtumien lisääminen ja katselu |
 | 25.11.| 0,5  | poetry, invoke ja pytest käyttöön |
 | 25.11.| 0,5  | pylint käyttöön ja koodin laadun parantaminen |
-| 26.11.| 1,0  | Sovelluksen testaaminen yliopiston koneella |
+| 26.11.| 1,0  | sovelluksen testaaminen yliopiston koneella |
 | 30.11.| 2,0  | refaktorointia, service-luokka, README:n päivitys |
-| 30.11.| 1,0  | Testit ja testikattavuus |
+| 30.11.| 1,0  | testit ja testikattavuus |
 | 30.11.| 0,5  | luokkakaavio |
 | 30.11.| 0,5  | suunnittelu ja koodin parantaminen |
-| 30.11.| 0,5  | testaaminen ja dokumentaation päivittämine |
-Yhteensä 18 h
+| 30.11.| 0,5  | testaaminen ja dokumentaation päivittäminen |
+|  1.12.| 2,0  | User-luokka, käyttäjän ja talletuksen yhdistäminen |
+|  1.12.| 1,0  | käyttäjän poistaminen |
+|  2.12.| 3,0  | käyttäjän poistaminen, lisää sarakkeita taulukkoon, tiedostojen lisääminen |
+|  5.12.| 2,0  | tiedostojen lisääminen, tapahtumien katsominen, päivämäärien korjaaminen |
+|Yhteensä| 24 h |
