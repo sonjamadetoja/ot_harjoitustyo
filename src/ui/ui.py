@@ -29,3 +29,5 @@ class UI:
         action = self._current_view.show_menu(user)
         if action == "logout":
             self._show_login_view()
+        if action == "again":
+            action = self._current_view.show_menu(user)
