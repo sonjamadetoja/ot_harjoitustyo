@@ -26,8 +26,8 @@ class UserRepository:
         self._connection.commit()
 
     def remove_user(self, user_id):
-        cursor = self._connection.cursor('DELETE FROM users WHERE username=?', (user_id))
-        cursor.execute()
+        cursor = self._connection.cursor()
+        cursor.execute('DELETE FROM users WHERE username=?', (user_id,))
         self._connection.commit()
 
 user_repository = UserRepository(get_database_connection())
