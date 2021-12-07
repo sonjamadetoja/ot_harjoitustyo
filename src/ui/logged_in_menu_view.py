@@ -14,6 +14,7 @@ class MenuView:
         print("4 Kirjaudu ulos")
         print("5 Poista käyttäjätunnus")
         print("6 Lisää tapahtumia cvs-tiedostosta")
+        print("7 Poista tapahtuma")
         choice = int(input("Valintani: "))
         # Note to self: Tähän lisättävä joku ratkaisu siihen jos input ei ole numero
         if choice == 1:
@@ -42,5 +43,9 @@ class MenuView:
             elif ret == True:
                 print("Tiedot lisätty.")
                 return "again"
+        elif choice == 7:
+            deposits = service.find_transactions(user)
+            id = int(input("Anna poistettavan tapahtuman id: "))
+            service.remove_transaction(id)
         else:
             print("Virheellinen valinta. Ohjelma päättyy.")
