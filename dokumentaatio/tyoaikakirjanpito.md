@@ -23,4 +23,10 @@
 |  1.12.| 1,0  | käyttäjän poistaminen |
 |  2.12.| 3,0  | käyttäjän poistaminen, lisää sarakkeita taulukkoon, tiedostojen lisääminen |
 |  5.12.| 2,0  | tiedostojen lisääminen, tapahtumien katsominen, päivämäärien korjaaminen |
-|Yhteensä| 24 h |
+|  5.12.| 0.5  | luokkakaavion päivittäminen |
+|  5.12.| 1.0  | sekvenssikaavio login-toiminnolle |
+|  5.12.| 2.0  | Testien tekeminen |
+|  7.12.| 4.5  | Testit, käyttöliittymän parantelu, testitiedosto |
+|  7.12.| 3.0  | Luokittelu, käyttöliittymä |
+
+|Yhteensä| 35 h |

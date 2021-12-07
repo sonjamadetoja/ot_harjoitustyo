@@ -17,9 +17,10 @@ Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäk
 - Sisäänkirjautuminen -tehty
 
 ### Kirjautuneena
-- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu) -tehty, paitsi luokittelu
+- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu) -tehty kokonaan
+- tapahtuman poistaminen -tehty
 - saldon näkeminen (omistuksessa olevan rahan määrä tällä hetkellä) -tehty
-- kuukausittaisten tai vuosittaisten yhteenvetojen katseleminen tuloista ja menoista luokittain
+- kuukausittaisten tai vuosittaisten yhteenvetojen katseleminen tuloista ja menoista luokittain -tehty
 - graafien katseleminen
 - tunnuksen poistaminen -tehty
 - uloskirjautuminen -tehty
