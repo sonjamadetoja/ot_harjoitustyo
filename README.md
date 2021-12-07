@@ -60,3 +60,7 @@ Tiedoston .pylintrc määrittelemät tarkistukset voi suorittaa komennolla:
 ```bash
 poetry run invoke lint
 ```
+
+### Tapahtumien lisääminen tiedostosta
+
+Tiedostonluku-toimintoa varten on data-kansioon lisätty tiedosto 'testitili.csv', jota voi halutessaan käyttää tähän tarkoitukseen.
