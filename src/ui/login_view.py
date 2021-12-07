@@ -13,11 +13,9 @@ class LoginView:
         # Note to self: Tähän lisättävä joku ratkaisu siihen jos input ei ole numero
         if choice == 1:
             user_name = input("Anna käyttäjätunnus: ")
-            # Note to self: Lisää tsekkaus esim. tyhjälle kentälle
             return service.login(user_name)
         elif choice == 2:
-            add_user_name = input("Keksi käyttäjätunnus: ")
-            # Note to self: Lisää tähän joku vaatimus pituudesta ja tarkistus sille
+            add_user_name = input("Keksi käyttäjätunnus: (max 20 merkkiä): ")
             return service.register(add_user_name)
         elif choice == 3:
             print("Ohjelma päättyy.")
