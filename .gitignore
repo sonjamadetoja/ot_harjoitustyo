@@ -6,7 +6,7 @@ laskarit/viikko2/maksukortti/src/__pycache__/
 laskarit/viikko2/maksukortti/src/tests/__pycache__/
 data/notes.txt
 data/database.sqlite
-data/testitili.csv
+data/database_test.sqlite
 src/entities/notes.txt
 src/repositories/notes.txt
 src/services/notes.txt
