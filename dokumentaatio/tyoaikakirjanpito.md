@@ -28,5 +28,6 @@
 |  5.12.| 2.0  | Testien tekeminen |
 |  7.12.| 4.5  | Testit, käyttöliittymän parantelu, testitiedosto |
 |  7.12.| 3.0  | Luokittelu, käyttöliittymä |
-
-|Yhteensä| 35 h |
+|  8.12.| 0.5  | refaktorointi ym|
+|  8.12.| 2.0  | plotly-kirjastoon perehtyminen, sen käyttöönotto ja graafin tekeminen |
+|Yhteensä| 37.5 h |
