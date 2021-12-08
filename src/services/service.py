@@ -1,4 +1,6 @@
 import os
+import pandas as pd
+import plotly.express as px
 from repositories.user_repository import user_repository
 from repositories.transaction_repository import transaction_repository
 from entities.user import User
@@ -45,6 +47,7 @@ class Service:
         user_id = user.get_user_id()
         deposits = self.transaction_repository.find_all_deposits(user_id)
         self.print_search_results(deposits)
+        self.show_graph(deposits)
         return deposits
 
     def find_transaction_by_year(self, user, year):
@@ -62,11 +65,26 @@ class Service:
     def print_search_results(self, deposits):
         sum_transactions = 0
         for item in deposits:
-            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]+", "+item[4]
+            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]+", "+str(item[4])
             print(item_string)
             item = int(item[2])
             sum_transactions = sum_transactions+item
         print("Saldo: ", sum_transactions)
+
+    def show_graph(self, deposits):
+        balance = []
+        dates = []
+        previous = 0
+        # Miten tähän sais aiemman saldon aloitussummaksi?
+        for item in deposits:
+            dep = previous + float(item[2])
+            dep = round(dep, 2)
+            balance.append(dep)
+            previous = dep
+            date = item[1]
+            dates.append(date)
+        fig = px.line(x=dates, y=balance, title="Tilin saldon muutos")
+        fig.show()
 
     def remove_transaction(self, id):
         self.transaction_repository.remove_deposit(id)
