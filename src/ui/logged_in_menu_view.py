@@ -31,7 +31,6 @@ class MenuView:
             return "search"
         elif choice == 3:
             deposits = service.find_transactions(user)
-            print(deposits[-1][0])
             id = int(input("Anna poistettavan tapahtuman id: "))
             # Note to self: lisää tähän jotain siltä varalta, että syöte ei ole sopiva
             service.remove_transaction(id)
