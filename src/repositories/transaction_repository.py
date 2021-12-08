@@ -36,11 +36,11 @@ class TransactionRepository:
         all_transactions = cursor.fetchall()
         deposits = []
         for row in all_transactions:
-            tpl = row[0], row[1], row[2], row[4]
+            tpl = row[0], row[1], row[2], row[4], row[5]
             deposits.append(tpl)
         sum_transactions = 0
         for item in deposits:
-            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]
+            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]+", "+item[4]
             print(item_string)
             item = int(item[2])
             sum_transactions = sum_transactions+item
@@ -54,11 +54,11 @@ class TransactionRepository:
         all_transactions = cursor.fetchall()
         deposits = []
         for row in all_transactions:
-            tpl = row[0], row[1], row[2], row[4]
+            tpl = row[0], row[1], row[2], row[4], row[5]
             deposits.append(tpl)
         sum_transactions = 0
         for item in deposits:
-            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]
+            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]+", "+item[4]
             print(item_string)
             item = int(item[2])
             sum_transactions = sum_transactions+item
