@@ -14,7 +14,7 @@ class TransactionRepository:
 
     def find_all_deposits(self, user_id):
         cursor = self._connection.cursor()
-        cursor.execute('SELECT * FROM transactions WHERE user_id=?', (user_id,))
+        cursor.execute('SELECT * FROM transactions WHERE user_id=? ORDER BY date', (user_id,))
         all_transactions = cursor.fetchall()
         deposits = []
         for row in all_transactions:
@@ -25,7 +25,7 @@ class TransactionRepository:
     def find_deposit_by_year(self, user_id, year):
         cursor = self._connection.cursor()
         date = str(year + '%') 
-        cursor.execute('SELECT * FROM transactions WHERE user_id=? AND date LIKE ?', (user_id,date))
+        cursor.execute('SELECT * FROM transactions WHERE user_id=? AND date LIKE ? ORDER BY date', (user_id,date))
         all_transactions = cursor.fetchall()
         deposits = []
         for row in all_transactions:
@@ -36,7 +36,7 @@ class TransactionRepository:
     def find_deposit_by_month(self, user_id, year, month):
         cursor = self._connection.cursor()
         date = str(year + '-' + month + '%') 
-        cursor.execute('SELECT * FROM transactions WHERE user_id=? AND date LIKE ?', (user_id,date))
+        cursor.execute('SELECT * FROM transactions WHERE user_id=? AND date LIKE ? ORDER BY date', (user_id,date))
         all_transactions = cursor.fetchall()
         deposits = []
         for row in all_transactions:
