@@ -49,12 +49,23 @@ class Service:
     def find_transaction_by_year(self, user, year):
         user_id = user.get_user_id()
         deposits = transaction_repository.find_deposit_by_year(user_id, year)
+        self.print_search_results(deposits)
         return deposits
 
     def find_transaction_by_month(self, user, year, month):
         user_id = user.get_user_id()
         deposits = transaction_repository.find_deposit_by_month(user_id, year, month)
+        self.print_search_results(deposits)
         return deposits
+
+    def print_search_results(self, deposits):
+        sum_transactions = 0
+        for item in deposits:
+            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]+", "+item[4]
+            print(item_string)
+            item = int(item[2])
+            sum_transactions = sum_transactions+item
+        print("Saldo: ", sum_transactions)
 
     def remove_transaction(self, id):
         self.transaction_repository.remove_deposit(id)

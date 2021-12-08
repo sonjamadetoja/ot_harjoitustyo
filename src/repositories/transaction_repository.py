@@ -38,13 +38,6 @@ class TransactionRepository:
         for row in all_transactions:
             tpl = row[0], row[1], row[2], row[4], row[5]
             deposits.append(tpl)
-        sum_transactions = 0
-        for item in deposits:
-            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]+", "+item[4]
-            print(item_string)
-            item = int(item[2])
-            sum_transactions = sum_transactions+item
-        print("Saldo: ", sum_transactions)
         return deposits
 
     def find_deposit_by_month(self, user_id, year, month):
@@ -56,13 +49,6 @@ class TransactionRepository:
         for row in all_transactions:
             tpl = row[0], row[1], row[2], row[4], row[5]
             deposits.append(tpl)
-        sum_transactions = 0
-        for item in deposits:
-            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]+", "+item[4]
-            print(item_string)
-            item = int(item[2])
-            sum_transactions = sum_transactions+item
-        print("Saldo: ", sum_transactions)
         return deposits
 
     def remove_deposit(self, id):
