@@ -44,6 +44,7 @@ class Service:
     def find_transactions(self, user):
         user_id = user.get_user_id()
         deposits = self.transaction_repository.find_all_deposits(user_id)
+        self.print_search_results(deposits)
         return deposits
 
     def find_transaction_by_year(self, user, year):
