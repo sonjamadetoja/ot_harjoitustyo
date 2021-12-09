@@ -30,4 +30,5 @@
 |  7.12.| 3.0  | Luokittelu, käyttöliittymä |
 |  8.12.| 0.5  | refaktorointi ym|
 |  8.12.| 2.0  | plotly-kirjastoon perehtyminen, sen käyttöönotto ja graafin tekeminen |
-|Yhteensä| 37.5 h |
+|  9.12.| 1.0  | piirakkagraafi ja dataframe sitä varten |
+|Yhteensä| 38.5 h |
