@@ -48,18 +48,23 @@ class Service:
         deposits = self.transaction_repository.find_all_deposits(user_id)
         self.print_search_results(deposits)
         self.show_graph(deposits)
+        self.show_pie(deposits)
         return deposits
 
     def find_transaction_by_year(self, user, year):
         user_id = user.get_user_id()
         deposits = transaction_repository.find_deposit_by_year(user_id, year)
         self.print_search_results(deposits)
+        self.show_graph(deposits)
+        self.show_pie(deposits)
         return deposits
 
     def find_transaction_by_month(self, user, year, month):
         user_id = user.get_user_id()
         deposits = transaction_repository.find_deposit_by_month(user_id, year, month)
         self.print_search_results(deposits)
+        self.show_graph(deposits)
+        self.show_pie(deposits)
         return deposits
 
     def print_search_results(self, deposits):
@@ -85,6 +90,20 @@ class Service:
             dates.append(date)
         fig = px.line(x=dates, y=balance, title="Tilin saldon muutos")
         fig.show()
+
+    def show_pie(self, deposits):
+        df = self.make_dataframe(deposits)
+        df_income = df[df.deposits > 0]
+        df_expense = df[df.deposits < 0]
+        df_expense.deposits = abs(df_expense.deposits)
+        fig = px.pie(df_income, values='deposits', names='category', title="Tulot", color_discrete_sequence=px.colors.sequential.RdBu)
+        fig.show()
+        fig = px.pie(df_expense, values='deposits', names='category', title="Menot", color_discrete_sequence=px.colors.sequential.RdBu)
+        fig.show()
+
+    def make_dataframe(self, deposits):
+        df = pd.DataFrame(deposits, columns=["id", "date", "deposits", "title", "category"])
+        return df
 
     def remove_transaction(self, id):
         self.transaction_repository.remove_deposit(id)
