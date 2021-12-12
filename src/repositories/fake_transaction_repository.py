@@ -2,10 +2,27 @@
 from database_connection import get_database_connection_test
 
 class TransactionRepository:
+    """Tapahtumiin liittyvistä testitietokantaoperaatioista vastaava luokka,
+    joka on tehty service-luokan testaamista varten.
+    """
     def __init__(self, connection):
+        """Luokan konstruktori.
+
+        Args:
+            connection: tietokantayhteys.
+        """
         self._connection = connection
 
     def add_deposit(self, date, amount, user_id, title, category):
+        """Tallentaa tapahtuman tietokantaan.
+
+        Args:
+            date: päivämäärä
+            amount: summa (positiivinen tai negatiivinen tapahtumasta riippuen)
+            user: kirjautuneena oleva käyttäjä
+            title: tapahtuman otsikko
+            category: tapahtuman luokittelu
+        """
         cursor = self._connection.cursor()
         cursor.execute('''
         INSERT INTO test_transactions (date, deposits, user_id, title, category) VALUES (?,?,?,?,?)
@@ -13,6 +30,14 @@ class TransactionRepository:
         self._connection.commit()
 
     def find_all_deposits(self, user_id):
+        """Hakee kaikki käyttäjän tapahtumat tietokannasta.
+
+        Args:
+            user_id (integer): käyttäjän tunnusnumero tietokannassa.
+
+        Returns:
+            lista: lista tapahtumista
+        """
         cursor = self._connection.cursor()
         cursor.execute('SELECT * FROM test_transactions WHERE user_id=?', (user_id,))
         all_transactions = cursor.fetchall()
@@ -23,6 +48,15 @@ class TransactionRepository:
         return deposits
 
     def find_deposit_by_year(self, user_id, year):
+        """Hakee kaikki käyttäjän tapahtumat tietokannasta yhden vuoden ajalta.
+
+        Args:
+            user_id (integer): käyttäjän tunnusnumero tietokannassa.
+            year (integer): vuosi
+
+        Returns:
+            lista: lista tapahtumista
+        """
         cursor = self._connection.cursor()
         date = str(year + '%')
         cursor.execute('''
@@ -36,6 +70,16 @@ class TransactionRepository:
         return deposits
 
     def find_deposit_by_month(self, user_id, year, month):
+        """Hakee kaikki käyttäjän tapahtumat tietokannasta yhden kuukauden ajalta.
+
+        Args:
+            user_id (integer): käyttäjän tunnusnumero tietokannassa.
+            year (integer): vuosi
+            monts (integer): kuukausi
+
+        Returns:
+            lista: lista tapahtumista
+        """
         cursor = self._connection.cursor()
         date = str(year + '-' + month + '%')
         cursor.execute('''
@@ -49,11 +93,21 @@ class TransactionRepository:
         return deposits
 
     def remove_deposit(self, id_number):
+        """Poistaa tapahtuman tietokannasta.
+
+        Args:
+            id_number (integer): tapahtuman tunnusnumero tietokannassa.
+        """
         cursor = self._connection.cursor()
         cursor.execute('DELETE FROM test_transactions WHERE id=?', (id_number,))
         self._connection.commit()
 
     def remove_all_deposits(self, user_id):
+        """Poistaa kaikki kirjautuneen käyttäjän tapahtumat tietokannasta.
+
+        Args:
+            user_id (integer): käyttäjän tunnusnumero tietokannassa.
+        """
         cursor = self._connection.cursor()
         cursor.execute('DELETE FROM test_transactions WHERE user_id=?', (user_id,))
         self._connection.commit()
