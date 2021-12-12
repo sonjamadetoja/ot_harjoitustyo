@@ -18,20 +18,39 @@ class TransactionRepository:
         all_transactions = cursor.fetchall()
         deposits = []
         for row in all_transactions:
-            tpl = row[0], row[1], row[2], row[4]
+            tpl = row[0], row[1], row[2], row[4], row[5]
             deposits.append(tpl)
-        sum_transactions = 0
-        for item in deposits:
-            item_string = "id: "+str(item[0])+", "+item[1]+", "+str(item[2])+", "+item[3]
-            print(item_string)
-            item = int(item[2])
-            sum_transactions = sum_transactions+item
-        print("Saldo: ", sum_transactions)
         return deposits
 
-    def remove_deposit(self, id):
+    def find_deposit_by_year(self, user_id, year):
         cursor = self._connection.cursor()
-        cursor.execute('DELETE FROM test_transactions WHERE id=?', (id,))
+        date = str(year + '%')
+        cursor.execute('''
+        SELECT * FROM test_transactions WHERE user_id=? AND date LIKE ? ORDER BY date
+        ''', (user_id,date))
+        all_transactions = cursor.fetchall()
+        deposits = []
+        for row in all_transactions:
+            tpl = row[0], row[1], row[2], row[4], row[5]
+            deposits.append(tpl)
+        return deposits
+
+    def find_deposit_by_month(self, user_id, year, month):
+        cursor = self._connection.cursor()
+        date = str(year + '-' + month + '%')
+        cursor.execute('''
+        SELECT * FROM test_transactions WHERE user_id=? AND date LIKE ? ORDER BY date
+        ''', (user_id,date))
+        all_transactions = cursor.fetchall()
+        deposits = []
+        for row in all_transactions:
+            tpl = row[0], row[1], row[2], row[4], row[5]
+            deposits.append(tpl)
+        return deposits
+
+    def remove_deposit(self, id_number):
+        cursor = self._connection.cursor()
+        cursor.execute('DELETE FROM test_transactions WHERE id=?', (id_number,))
         self._connection.commit()
 
     def remove_all_deposits(self, user_id):

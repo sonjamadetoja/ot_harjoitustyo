@@ -10,7 +10,6 @@ class UserRepository:
         row = cursor.fetchone()
         if row is None:
             return False
-        user_id = row[0]
         return row[1] == username
 
     def find_user_id(self, username):
