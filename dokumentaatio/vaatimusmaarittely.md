@@ -21,7 +21,7 @@ Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäk
 - tapahtuman poistaminen -tehty
 - saldon näkeminen (omistuksessa olevan rahan määrä tällä hetkellä) -tehty
 - kuukausittaisten tai vuosittaisten yhteenvetojen katseleminen tuloista ja menoista luokittain -tehty
-- graafien katseleminen
+- graafien katseleminen -tehty
 - tunnuksen poistaminen -tehty
 - uloskirjautuminen -tehty
 
