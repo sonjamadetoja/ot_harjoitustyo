@@ -23,12 +23,20 @@
 |  1.12.| 1,0  | käyttäjän poistaminen |
 |  2.12.| 3,0  | käyttäjän poistaminen, lisää sarakkeita taulukkoon, tiedostojen lisääminen |
 |  5.12.| 2,0  | tiedostojen lisääminen, tapahtumien katsominen, päivämäärien korjaaminen |
-|  5.12.| 0.5  | luokkakaavion päivittäminen |
-|  5.12.| 1.0  | sekvenssikaavio login-toiminnolle |
-|  5.12.| 2.0  | Testien tekeminen |
-|  7.12.| 4.5  | Testit, käyttöliittymän parantelu, testitiedosto |
-|  7.12.| 3.0  | Luokittelu, käyttöliittymä |
-|  8.12.| 0.5  | refaktorointi ym|
-|  8.12.| 2.0  | plotly-kirjastoon perehtyminen, sen käyttöönotto ja graafin tekeminen |
-|  9.12.| 1.0  | piirakkagraafi ja dataframe sitä varten |
-|Yhteensä| 38.5 h |
+|  5.12.| 0,5  | luokkakaavion päivittäminen |
+|  5.12.| 1,0  | sekvenssikaavio login-toiminnolle |
+|  5.12.| 2,0  | testien tekeminen |
+|  7.12.| 4,5  | testit, käyttöliittymän parantelu, testitiedosto |
+|  7.12.| 3,0  | luokittelu, käyttöliittymä |
+|  8.12.| 0,5  | refaktorointi ym|
+|  8.12.| 2,0  | plotly-kirjastoon perehtyminen, sen käyttöönotto ja graafin tekeminen |
+|  9.12.| 1,0  | piirakkagraafi ja dataframe sitä varten |
+| 10.12.| 0,5  | Docstringiin perehtyminen ja asentaminen |
+| 12.12.| 2,0  | Docstringin kirjoittaminen |
+| 12.12.| 0,5  | koodin parantaminen |
+| 14.12.| 1,0  | arkkitehtuurikuvaus |
+| 14.12.| 1,0  | testit |
+| 14.12.| 1,0  | käyttöliittymä |
+| 14.12.| 0,5  | käyttöohje |
+
+|Yhteensä| 45 h |
