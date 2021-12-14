@@ -1,4 +1,4 @@
-
+import datetime
 from services.service import service
 from entities.user import User
 
@@ -23,6 +23,9 @@ class MenuView:
             category = input("Luokittele tapahtuma: ") 
             # Note to self: Tähän voisi tulla graafisessa käyttöliittymässä myös drop down valikko
             # Note to self: lisää tähän jokin varmistus, että syötteet ovat sopivia
+            if not date.strip():
+                date = datetime.datetime.now()
+                date = date.strftime("%Y-%m-%d")
             ret = service.add_transaction(date, amount, user, title, category)
             if ret == True:
                 print("Tapahtuma on lisätty.")
