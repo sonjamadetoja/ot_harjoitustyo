@@ -14,6 +14,10 @@ Sovelluksen toiminta on testattu Python-versiolla ```3.8.```
 
 [Arkkitehtuuri](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Release 1](https://github.com/sonjamadetoja/ot_harjoitustyo/releases/tag/viikko5)
+
+[Release 2](https://github.com/sonjamadetoja/ot_harjoitustyo/releases/tag/viikko6)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
