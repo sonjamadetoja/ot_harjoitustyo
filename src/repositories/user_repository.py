@@ -62,7 +62,7 @@ class UserRepository:
             username (string): käyttäjätunnus.
         """
         cursor = self._connection.cursor()
-        cursor.execute('DELETE FROM users WHERE username=?', (user_id,))
+        cursor.execute('DELETE FROM users WHERE id=?', (user_id,))
         self._connection.commit()
 
 user_repository = UserRepository(get_database_connection())

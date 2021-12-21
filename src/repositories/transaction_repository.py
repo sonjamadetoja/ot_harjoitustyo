@@ -40,6 +40,8 @@ class TransactionRepository:
         cursor = self._connection.cursor()
         cursor.execute('SELECT * FROM transactions WHERE user_id=? ORDER BY date', (user_id,))
         all_transactions = cursor.fetchall()
+        if not all_transactions:
+            return None
         deposits = []
         for row in all_transactions:
             tpl = row[0], row[1], row[2], row[4], row[5]
@@ -62,6 +64,8 @@ class TransactionRepository:
         SELECT * FROM transactions WHERE user_id=? AND date LIKE ? ORDER BY date
         ''', (user_id,date))
         all_transactions = cursor.fetchall()
+        if not all_transactions:
+            return None
         deposits = []
         for row in all_transactions:
             tpl = row[0], row[1], row[2], row[4], row[5]
@@ -85,6 +89,8 @@ class TransactionRepository:
         SELECT * FROM transactions WHERE user_id=? AND date LIKE ? ORDER BY date
         ''', (user_id,date))
         all_transactions = cursor.fetchall()
+        if not all_transactions:
+            return None
         deposits = []
         for row in all_transactions:
             tpl = row[0], row[1], row[2], row[4], row[5]
@@ -108,7 +114,7 @@ class TransactionRepository:
             user_id (integer): käyttäjän tunnusnumero tietokannassa.
         """
         cursor = self._connection.cursor()
-        cursor.execute('DELETE FROM transactions WHERE user_id=?', (user_id,))
+        cursor.execute('DELETE FROM transactions WHERE id=?', (user_id,))
         self._connection.commit()
 
 transaction_repository = TransactionRepository(get_database_connection())
