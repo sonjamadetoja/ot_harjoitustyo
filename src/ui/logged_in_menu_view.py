@@ -1,65 +1,66 @@
-import datetime
+from tkinter import ttk, constants
 from services.service import service
-from entities.user import User
 
 class MenuView:
-    def __init__(self):
-        pass
+    def __init__(self, root, handle_logout, handle_search, handle_add, user):
+        self._root = root
+        self._frame = None
+        self._entry = None
+        self._handle_logout = handle_logout
+        self._handle_search = handle_search
+        self._handle_add = handle_add
+        self.user = user
 
-    def show_menu(self, user):
-        while True:
-            print("Valitse toiminto numerolla:")
-            print("1 Lisää tapahtuma")
-            print("2 Katso tapahtumia")
-            print("3 Poista tapahtuma")
-            print("4 Kirjaudu ulos")
-            print("5 Poista käyttäjätunnus")
-            print("6 Lisää tapahtumia cvs-tiedostosta")
-            choice = input("Valintani: ")
-            if choice == "1":
-                amount = int(input("Anna summa: "))
-                date = input("Anna päivämäärä (muodossa yyyy-mm-dd): ")
-                title = input("Anna otsikko: ")
-                category = input("Luokittele tapahtuma: ")
-                # Note to self: Tähän voisi tulla graafisessa käyttöliittymässä myös drop down valikko
-                # Note to self: lisää tähän jokin varmistus, että syötteet ovat sopivia
-                if not date.strip():
-                    date = datetime.datetime.now()
-                    date = date.strftime("%Y-%m-%d")
-                ret = service.add_transaction(date, amount, user, title, category)
-                if ret == True:
-                    print("Tapahtuma on lisätty.")
-                return "again"
-            elif choice == "2":
-                return "search"
-            elif choice == "3":
-                deposits = service.find_transactions(user)
-                id = int(input("Anna poistettavan tapahtuman id: "))
-                # Note to self: lisää tähän jotain siltä varalta, että syöte ei ole sopiva
-                service.remove_transaction(id)
-                return "again"
-            elif choice == "4":
-                return service.logout(user)
-            elif choice == "5":
-                print("HUOM: Kaikki tietosi poistuvat.")
-                action = input("Haluatko varmasti jatkaa? Vastaa \"kyllä\" tai \"ei\": ")
-                if action == "kyllä":
-                    service.delete_user(user)
-                    print("Käyttäjätunnuksesi on poistettu.")
-                    return service.logout(user)
-                elif action == "ei":
-                    return "again"
-                else:
-                    print("Vastaus oli virheellinen.")
-                    return "again"
-            elif choice == "6":
-                filename = input("Anna tiedoston nimi: ")
-                ret = service.add_file(user, filename)
-                if ret == False:
-                    print("Virheellinen tiedostonimi.")
-                    return "again"
-                elif ret == True:
-                    print("Tiedot lisätty.")
-                    return "again"
-            else:
-                print("Virheellinen valinta.")
+        self.initialize()
+
+    def pack(self):
+        self._frame.pack(fill=constants.X)
+
+    def destroy(self):
+        self._frame.destroy()
+
+    def _search_handler(self, user):
+        self._handle_search(user)
+
+    def _add_handler(self, user):
+        self._handle_add(user)
+    
+    def _logout_handler(self):
+        service.logout(self.user)
+        self._handle_logout()
+
+    def _delete_username_handler(self):
+        service.delete_user(self.user)
+        self._handle_logout()
+
+    def initialize(self):
+        self._frame = ttk.Frame(master=self._root)
+
+        button_add_transaction = ttk.Button(
+            master=self._frame,
+            text="Lisää tapahtumia yksittäin tai tiedostosta",
+            command = lambda: self. _add_handler(self.user)
+            )
+
+        button_search = ttk.Button(
+            master=self._frame,
+            text="Katso tai poista tapahtumia",
+            command = lambda: self._search_handler(self.user)
+            )
+
+        button_remove_username = ttk.Button(
+            master=self._frame,
+            text="Poista käyttäjätunnus",
+            command = self._delete_username_handler
+            )
+
+        button_logout = ttk.Button(
+            master=self._frame,
+            text="Kirjaudu ulos",
+            command = self._logout_handler
+            )
+
+        button_add_transaction.pack(fill=constants.X)
+        button_search.pack(fill=constants.X)
+        button_remove_username.pack(fill=constants.X)
+        button_logout.pack(fill=constants.X)
