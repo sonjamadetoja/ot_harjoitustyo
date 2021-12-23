@@ -7,6 +7,9 @@ laskarit/viikko2/maksukortti/src/tests/__pycache__/
 data/notes.txt
 data/database.sqlite
 data/database_test.sqlite
+data/graph.png
+data/pie_exp.png
+data/pie_inc.png
 src/entities/notes.txt
 src/repositories/notes.txt
 src/services/notes.txt
