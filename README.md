@@ -8,17 +8,19 @@ Sovelluksen toiminta on testattu Python-versiolla ```3.8.```
 
 ## Dokumentaatio
 
+[Käyttöohje](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 [Vaatimusmäärittely](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[Työaikakirjanpito](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
-
 [Arkkitehtuuri](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
+[Testausdokumentti](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/testaus.md)
+
+[Työaikakirjanpito](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 [Release 1](https://github.com/sonjamadetoja/ot_harjoitustyo/releases/tag/viikko5)
 
 [Release 2](https://github.com/sonjamadetoja/ot_harjoitustyo/releases/tag/viikko6)
-
-[Käyttöohje](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 ## Asennus
 
