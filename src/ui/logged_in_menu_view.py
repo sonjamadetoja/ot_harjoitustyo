@@ -1,5 +1,5 @@
 from tkinter import ttk, constants
-from services.service import service
+from services.user_service import user_service
 
 class MenuView:
     def __init__(self, root, handle_logout, handle_search, handle_add, user):
@@ -26,11 +26,11 @@ class MenuView:
         self._handle_add(user)
     
     def _logout_handler(self):
-        service.logout(self.user)
+        user_service.logout(self.user)
         self._handle_logout()
 
     def _delete_username_handler(self):
-        service.delete_user(self.user)
+        user_service.delete_user(self.user)
         self._handle_logout()
 
     def initialize(self):

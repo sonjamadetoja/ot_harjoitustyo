@@ -1,5 +1,5 @@
 from tkinter import ttk, constants, StringVar
-from services.service import service
+from services.user_service import user_service
 
 class LoginView:
     def __init__(self, root, handle_register, handle_login):
@@ -21,7 +21,7 @@ class LoginView:
 
     def _login_handler(self):
         username = self._username_entry.get()
-        user = service.login(username)
+        user = user_service.login(username)
         if not user==None:
             self._handle_login(user)
         else:

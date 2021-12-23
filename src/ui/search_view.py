@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.express as px
 import os
 from PIL import ImageTk,Image  
-from services.service import service
+from services.transaction_service import transaction_service
 
 class SearchView:
     def __init__(self, root, handle_return, handle_new_search, user):
@@ -37,7 +37,7 @@ class SearchView:
         self._frame.destroy()
 
     def _search_all(self, user):
-        results = service.find_transactions(user)
+        results = transaction_service.find_transactions(user)
         if results == None:
                 self._show_info("Ei tapahtumia.")
         else:
@@ -85,7 +85,7 @@ class SearchView:
             self._show_error("Virheellinen vuosiluku. Anna vuosiluku neljänä numerona.")
         else:
             self._hide_error()
-            results = service.find_transaction_by_year(user, year = year.strip())
+            results = transaction_service.find_transaction_by_year(user, year = year.strip())
             if results == None:
                 self._show_info("Ei tapahtumia.")
             else:
@@ -173,7 +173,7 @@ class SearchView:
             self._show_error("Virheellinen id-tunnus. Anna tunnus numerona.")
         else:
             self._hide_error()
-            service.remove_transaction(id_number)
+            transaction_service.remove_transaction(id_number)
             self._remove_entry.delete(0, constants.END)
             self._show_info(f"Tapahtuma {id_number} on poistettu.")
 

@@ -1,7 +1,7 @@
 import datetime
 import re
 from tkinter import ttk, constants, StringVar
-from services.service import service
+from services.transaction_service import transaction_service
 from entities.user import User
 
 class AddTransactionView:
@@ -45,7 +45,7 @@ class AddTransactionView:
             self._show_error("Virheellinen summa. Tapahtumaa ei lisätty.")
         else:
             self._hide_error()
-            service.add_transaction(date, amount, self.user, title, category)
+            transaction_service.add_transaction(date, amount, self.user, title, category)
             self._show_info("Tapahtuma lisätty.")
             self._date_entry.delete(0, constants.END)
             self._amount_entry.delete(0, constants.END)
@@ -59,7 +59,7 @@ class AddTransactionView:
             self._show_error("Tiedostonnimi-kenttä on tyhjä. Kirjoita nimi.")
         else:
             filename = filename.strip()
-            result = service.add_file(self.user, filename)
+            result = transaction_service.add_file(self.user, filename)
             if result == False:
                 self._show_error("Tiedostoa ei löydy tällä nimellä.")
             else:

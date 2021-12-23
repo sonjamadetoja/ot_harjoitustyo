@@ -1,5 +1,5 @@
 from tkinter import ttk, constants, StringVar
-from services.service import service
+from services.user_service import user_service
 
 class RegisterView:
     def __init__(self, root, handle_reg):
@@ -20,7 +20,7 @@ class RegisterView:
     
     def _register_handler(self):
         username = self._entry.get()
-        result = service.register(username)
+        result = user_service.register(username)
         if result == False:
             self._show_error("""Rekisteröityminen epäonnistui.
             Joko antamasi käyttäjätunnus on jo olemassa,
