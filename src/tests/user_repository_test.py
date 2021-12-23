@@ -29,13 +29,15 @@ class TestUserRepository(unittest.TestCase):
     def test_add_user(self):
         self.user_repository.add_user("Maaria")
         response = self.user_repository.find_user("Maaria")
-        self.user_repository.remove_user("Maaria")
+        id = self.user_repository.find_user_id("Maaria")
+        self.user_repository.remove_user(id)
 
         self.assertEqual(response, True)
 
     def test_remove_user(self):
         self.user_repository.add_user("Maria")
-        self.user_repository.remove_user("Maria")
+        id = self.user_repository.find_user_id("Maria")
+        self.user_repository.remove_user(id)
         response = self.user_repository.find_user("Maria")
 
         self.assertEqual(response, False)
