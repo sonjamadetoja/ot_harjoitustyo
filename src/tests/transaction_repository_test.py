@@ -46,6 +46,13 @@ class TestTransactionRepository(unittest.TestCase):
             response = True
         self.assertEqual(response, True)
 
+    def test_find_deposit_by_year_if_none(self):
+        result = self.transaction_repository.find_deposit_by_year(10, "2000")
+        response = False
+        if result == None:
+            response = True
+        self.assertEqual(response, True)
+
     def test_find_deposit_by_month(self):
         self.transaction_repository.add_deposit("2017-08-12", -30, 10, "puhelinlasku", "menot")
         self.transaction_repository.add_deposit("2017-09-12", -40, 10, "puhelinlasku", "menot")
@@ -53,6 +60,14 @@ class TestTransactionRepository(unittest.TestCase):
         result = self.transaction_repository.find_deposit_by_month(10, "2017", "10")
         response = False
         if len(result) == 1:
+            response = True
+        self.assertEqual(response, True)
+
+    def test_find_deposit_by_month_if_none(self):
+        self.transaction_repository.add_deposit("2017-11-12", -60, 10, "puhelinlasku", "menot")
+        result = self.transaction_repository.find_deposit_by_month(10, "2017", "12")
+        response = False
+        if result == None:
             response = True
         self.assertEqual(response, True)
 
