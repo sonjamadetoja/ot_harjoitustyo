@@ -49,5 +49,7 @@
 | 22.12.| 4,5  | graafinen käyttöliittymä |
 | 22.12.| 1,0  | dokumentaatio |
 | 23.12.| 1,0  | testit |
+| 23.12.| 1,0  | refaktorointi |
+| 23.12.| 2,0  | dokumentaatio |
 | 23.12.| 1,0  | viimeistely |
-|Yhteensä| 70,5 h ||
+|Yhteensä| 73,5 h ||
