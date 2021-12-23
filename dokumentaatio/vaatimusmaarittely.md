@@ -8,7 +8,7 @@ Sovelluksen tarkoitus on tulojen ja menojen seuraaminen ja se on tarkoitettu yks
 
 Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäkymään tai kirjautuneen käyttäjän näkymään. Kirjautuneen käyttäjän näkymästä pääsee lisäämään tapahtumia, katsomaan tapahtumia tai poistamaan tunnuksen. Tapahtumien lisäämisnäkymässä joko lisätään yhden tapahtuman tiedot tai haetaan tiedot tiedostosta. Tapahtumien katsomisnäkymässä valitaan kuukausi tai vuosi, jolloin sovellus hakee tapahtumatiedot ja näyttää niistä graafin.
 
-<img src="https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/kayttoliittymaluonnos_budjettisovellus.jpeg" width="750">
+<img src="https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/kuvat/kayttoliittymaluonnos_budjettisovellus.jpeg" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
 
@@ -17,15 +17,18 @@ Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäk
 - Sisäänkirjautuminen -tehty
 
 ### Kirjautuneena
-- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu) -tehty kokonaan
+- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu) -tehty
 - tapahtuman poistaminen -tehty
 - saldon näkeminen (omistuksessa olevan rahan määrä tällä hetkellä) -tehty
 - kuukausittaisten tai vuosittaisten yhteenvetojen katseleminen tuloista ja menoista luokittain -tehty
 - graafien katseleminen -tehty
 - tunnuksen poistaminen -tehty
 - uloskirjautuminen -tehty
+- graafinen käyttöliittymä -tehty
 
 ## Jatkokehitysideoita
 - salasana
 - useat tilit
 - tiedot voi viedä exceliin
+- mahdollisuus muuttaa luokittelua
+- alasvetovalikko luokalle tapahtuman lisäyskohtaan
