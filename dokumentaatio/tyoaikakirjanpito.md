@@ -38,5 +38,16 @@
 | 14.12.| 1,0  | testit |
 | 14.12.| 1,0  | käyttöliittymä |
 | 14.12.| 0,5  | käyttöohje |
-
-|Yhteensä| 45 h |
+| 15.12.| 2,0  | graafinen käyttöliittymä |
+| 16.12.| 2,0  | graafinen käyttöliittymä |
+| 17.12.| 1,0  | graafinen käyttöliittymä |
+| 18.12.| 1,0  | graafinen käyttöliittymä |
+| 20.12.| 5,5  | graafinen käyttöliittymä |
+| 21.12.| 2,0  | graafinen käyttöliittymä |
+| 21.12.| 1,0  | testit |
+| 22.12.| 1,5  | testit |
+| 22.12.| 4,5  | graafinen käyttöliittymä |
+| 22.12.| 1,0  | dokumentaatio |
+| 23.12.| 1,0  | testit |
+| 23.12.| 1,0  | viimeistely |
+|Yhteensä| 70,5 h ||
