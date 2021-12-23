@@ -1,4 +1,3 @@
-
 from database_connection import get_database_connection
 
 class TransactionRepository:
@@ -114,7 +113,7 @@ class TransactionRepository:
             user_id (integer): käyttäjän tunnusnumero tietokannassa.
         """
         cursor = self._connection.cursor()
-        cursor.execute('DELETE FROM transactions WHERE id=?', (user_id,))
+        cursor.execute('DELETE FROM transactions WHERE user_id=?', (user_id,))
         self._connection.commit()
 
 transaction_repository = TransactionRepository(get_database_connection())
