@@ -2,6 +2,9 @@
 
 ## Rakenne
 
+Pakettikaavio:
+<img src="https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/kuvat/packagediagram.png">
+
 Ohjelman rakenne on kolmitasoinen: ui-kansio sisältää käyttöliittymäkoodin, services-kansio sovelluslogiikan, ja repositories-kansio tietokantatoiminnot. Entities-kansio sisältää käyttäjäluokan, jota muut luokat käyttävät.
 
 ## Käyttöliittymä
