@@ -1,11 +1,12 @@
 import unittest
 from initialize_database import DataBase
 from database_connection import get_database_connection_test
-from repositories.fake_user_repository import fake_user_repository
+from repositories.user_repository import UserRepository
 
 class TestDataBase(unittest.TestCase):
     def setUp(self):
-        self.db = DataBase(get_database_connection_test(), fake_user_repository)
+        self.user_repository = UserRepository(get_database_connection_test())
+        self.db = DataBase(get_database_connection_test(), self.user_repository)
 
     def test_create_tables(self):
         self.db.drop_tables()
