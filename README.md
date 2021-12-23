@@ -18,19 +18,28 @@ Sovelluksen toiminta on testattu Python-versiolla ```3.8.```
 
 [Release 2](https://github.com/sonjamadetoja/ot_harjoitustyo/releases/tag/viikko6)
 
+[Käyttöohje](https://github.com/sonjamadetoja/ot_harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 ## Asennus
 
-1. Asenna riippuvuudet komennolla:
+2. Asenna Kaleido joko pipillä:
 
     ```bash
-    poetry install
+    pip install -U kaleido
     ```
 
-2. Käynnistä sovellus komennolla:
+    tai condalla: 
+
+    ```bash
+    conda install -c plotly python-kaleido
+    ```
+
+3. Käynnistä sovellus komennolla:
 
     ```bash
     poetry run invoke start
     ```
+
 ## Komentorivitoiminnot
 
 ### Ohjelman suorittaminen
