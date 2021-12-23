@@ -1,5 +1,3 @@
-from repositories.user_repository import user_repository
-
 class DataBase:
     """Tietokannasta vastaava luokka.
     """
