@@ -1,6 +1,4 @@
 import os
-import pandas as pd
-import plotly.express as px
 from repositories.user_repository import user_repository
 from repositories.transaction_repository import transaction_repository
 from entities.user import User
@@ -39,7 +37,7 @@ class Service:
             user_id = self.user_repository.find_user_id(user_name)
             user = User(user_name, user_id)
             return user
-        return "no_username"
+        return None
 
     def logout(self, user):
         """Tämä funktio huolehtii käyttäjän uloskirjautumisesta.
@@ -51,7 +49,7 @@ class Service:
             string: "logout"
         """
         user = None
-        return "logout"
+        return user
 
     def register(self, add_user_name):
         """Tämä funktio huolehtii uuden käyttäjänimen rekisteröinnistä.
@@ -71,7 +69,7 @@ class Service:
         if len(add_user_name) > 20:
             return False
         self.user_repository.add_user(add_user_name)
-        return "register"
+        return True
 
     def delete_user(self, user):
         """Poistaa käyttäjän tietokannoista.
@@ -111,9 +109,8 @@ class Service:
         """
         user_id = user.get_user_id()
         deposits = self.transaction_repository.find_all_deposits(user_id)
-        self.print_search_results(deposits)
-        self.show_graph(deposits)
-        self.show_pie(deposits)
+        if not deposits:
+            return None
         return deposits
 
     def find_transaction_by_year(self, user, year):
@@ -129,9 +126,8 @@ class Service:
         """
         user_id = user.get_user_id()
         deposits = transaction_repository.find_deposit_by_year(user_id, year)
-        self.print_search_results(deposits)
-        self.show_graph(deposits)
-        self.show_pie(deposits)
+        if not deposits:
+            return None
         return deposits
 
     def find_transaction_by_month(self, user, year, month):
@@ -148,73 +144,9 @@ class Service:
         """
         user_id = user.get_user_id()
         deposits = transaction_repository.find_deposit_by_month(user_id, year, month)
-        self.print_search_results(deposits)
-        self.show_graph(deposits)
-        self.show_pie(deposits)
+        if not deposits:
+            return None
         return deposits
-
-    def print_search_results(self, deposits):
-        """Tulostaa hakutulokset ruudulle.
-
-        Args:
-            deposits (list): Lista tapahtumista.
-        """
-        sum_transactions = 0
-        for item in deposits:
-            item_string = f"id: {str(item[0])}, {item[1]}, {str(item[2])}, {item[3]}, {str(item[4])}"
-            print(item_string)
-            item = int(item[2])
-            sum_transactions = sum_transactions+item
-        print("Saldo: ", sum_transactions)
-
-    def show_graph(self, deposits):
-        """Piirtää kaavion tapahtumista.
-
-        Args:
-            deposits (list): Lista tapahtumista.
-        """
-        balance = []
-        dates = []
-        previous = 0
-        # Miten tähän sais aiemman saldon aloitussummaksi?
-        for item in deposits:
-            dep = previous + float(item[2])
-            dep = round(dep, 2)
-            balance.append(dep)
-            previous = dep
-            date = item[1]
-            dates.append(date)
-        fig = px.line(x=dates, y=balance, title="Tilin saldon muutos")
-        fig.show()
-
-    def show_pie(self, deposits):
-        """Piirtää piirakkakaavion tapahtumista.
-
-        Args:
-            deposits (list): Lista tapahtumista.
-        """
-        data_frame = self.make_dataframe(deposits)
-        df_income = data_frame[data_frame.deposits > 0]
-        df_expense = data_frame[data_frame.deposits < 0]
-        df_expense.deposits = abs(df_expense.deposits)
-        fig = px.pie(df_income, values='deposits', names='category', title="Tulot",
-        color_discrete_sequence=px.colors.sequential.RdBu)
-        fig.show()
-        fig = px.pie(df_expense, values='deposits', names='category', title="Menot",
-        color_discrete_sequence=px.colors.sequential.RdBu)
-        fig.show()
-
-    def make_dataframe(self, deposits):
-        """Muodostaa tapahtumalistasta dataframe-taulukon.
-
-        Args:
-            deposits (list): Lista tapahtumista.
-
-        Returns:
-            DataFrame: Taulukko tapahtumista.
-        """
-        data_frame = pd.DataFrame(deposits, columns=["id", "date", "deposits", "title", "category"])
-        return data_frame
 
     def remove_transaction(self, id_number):
         """Poistaa tapahtuman tietokannasta.
@@ -249,19 +181,17 @@ class Service:
                 edit = line.split(";")
                 for item in edit:
                     item.strip()
-                edit[0] = edit[0].strip()
-                # Tää alla oleva ei toimi jostain syystä
-                # -> siksi ekan rivin skippaus ennen loopin alkua
-                # if edit[0] == "Kirjauspäivä":
-                #     continue
-                date = edit[0]
-                date = date.split(".")
-                date = date[2]+"-"+date[1]+"-"+date[0]
-                amount = str(edit[1])
-                amount = amount.replace(",", ".")
+                date = self._fix_date(edit[0])
+                amount = str(edit[1]).replace(",", ".")
                 title = edit[5]
                 category = "tilitapahtuma"
                 self.transaction_repository.add_deposit(date, amount, user_id, title, category)
         return True
+
+    def _fix_date(self, date):
+        date = date.strip()
+        date = date.split(".")
+        date = date[2]+"-"+date[1]+"-"+date[0]
+        return date
 
 service = Service(user_repository, transaction_repository)
