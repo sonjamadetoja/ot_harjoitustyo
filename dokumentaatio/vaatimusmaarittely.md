@@ -13,18 +13,20 @@ Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäk
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
-- Tunnuksen luominen -tehty
-- Sisäänkirjautuminen -tehty
+- Tunnuksen luominen
+- Sisäänkirjautuminen
 
 ### Kirjautuneena
-- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu) -tehty
-- tapahtuman poistaminen -tehty
-- saldon näkeminen (omistuksessa olevan rahan määrä tällä hetkellä) -tehty
-- kuukausittaisten tai vuosittaisten yhteenvetojen katseleminen tuloista ja menoista luokittain -tehty
-- graafien katseleminen -tehty
-- tunnuksen poistaminen -tehty
-- uloskirjautuminen -tehty
-- graafinen käyttöliittymä -tehty
+- tapahtumien lisääminen (rahan lisäys/poisto, nimi, pvm, luokittelu)
+- tapahtuman poistaminen
+- tapahtumien katseleminen, niin että voi hakea kaikki tapahtumat, tai yhden kuukauden tai yhden vuoden tapahtumat
+  - tämä toiminto on toteutettu, mutta tällä hetkellä on mahdollista katsella vain sen verran tapahtumia, kuin ikkunaan mahtuu, sillä tapahtumalistaan ei ole toteutettu vierityspalkkia.
+- saldon näkeminen
+- piirakkakaaviot tuloista ja menoista luokittain
+- kaavio saldon muutoksesta haetulla ajalla
+- tunnuksen poistaminen
+- uloskirjautuminen
+- graafinen käyttöliittymä
 
 ## Jatkokehitysideoita
 - salasana
@@ -32,3 +34,4 @@ Ensimmäinen näkymä on kirjautumisnäkymä, josta pääsee tunnuksenluomisnäk
 - tiedot voi viedä exceliin
 - mahdollisuus muuttaa luokittelua
 - alasvetovalikko luokalle tapahtuman lisäyskohtaan
+- varmistuskysymys tunnuksen poistamiskohtaan ja tapahtuman poistamiskohtaan
