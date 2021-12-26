@@ -22,6 +22,8 @@ Sovelluksen toiminta on testattu Python-versiolla ```3.8.```
 
 [Release 2](https://github.com/sonjamadetoja/ot_harjoitustyo/releases/tag/viikko6)
 
+[Release: Loppupalautus](https://github.com/sonjamadetoja/ot_harjoitustyo/releases/tag/viikko7)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
